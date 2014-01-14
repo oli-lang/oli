@@ -2,13 +2,38 @@
 
 > Elegant and declarative minimalist language for general purposes
 
+
+```
+            __
+           (__)
+         _|__|_|_
+        (________)  
+        |        |
+        |        |
+       |          |
+      |            |                 _   _
+     |              |               | | (_)
+    |                |          ___ | |  _
+   |                  |        / _ \| | | |
+  |                    |      | (_) | |_| |
+  |~^~~~^~~^~~~^~~^~~^~|       \___/\___|_|
+  |~^~~~^~~~^~~~~^~~^~~|
+   |__________________|
+    :________________:
+     `-..________..-´
+
+```
 > **work in progress**
 
-Current version: 0.1.0-rc.1
+<table>
+<tr> 
+<td>Version</td><td>0.1.0</td>
+</tr>
+</table>
 
 ## Rationale
 
-Thinking about it...
+Reinventing the wheel is fun
 
 ## Example
 
@@ -22,19 +47,18 @@ author:
   name: Tomas Aparicio
   email: tomas@aparicio.me
   web: http://tomas.aparicio.me
-  social: no # it's a primitive
+  social: no # a boolean primitive
 end 
 
 ##
   Multi-line comment
 ##
 deploy (zeus):
-  server: http://deploy.server.com
+  server: 'http://deploy.server.com' # strings can be quoted
   port: 9000 # this is a number
   # nested block
-  authentication: 
+  authentication (token): 
     token: %1DOTnv6B9b]n7pbV535
-    tries: 1
   end
 end
 
