@@ -1,7 +1,6 @@
 # Oli
 
-> Elegant and declarative minimalist language for general purposes
-
+> **work in progress**
 
 <pre>
             __
@@ -17,18 +16,16 @@
    |                  |        / _ \| | | |
   |                    |      | (_) | |_| |
   |~^~~~^~~^~~~^~~^~~^~|       \___/\___|_|
-  |~^~~~^~~~^~~~~^~~^~~|
-   |__________________|
+  |~^~~~^~~~^~~~~^~~^~~|  
+   |__________________|       Elegant and declarative minimalist language for general purposes
     :________________:
      `-..________..-´
 
 </pre>
 
-> **work in progress**
-
 <table>
 <tr> 
-<td>Version</td><td>0.1.0</td>
+<td>Current version</td><td>0.1.0</td>
 </tr>
 </table>
 
