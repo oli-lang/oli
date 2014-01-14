@@ -1,0 +1,8 @@
+# an in-line comment
+
+server: http://google.es
+port: 9000
+
+test (app): 
+  run test
+end
