@@ -29,7 +29,7 @@
 
 ## Rationale
 
-Reinventing the wheel for fun
+Reinventing the wheel just for fun
 
 ## Example
 
@@ -37,7 +37,7 @@ Reinventing the wheel for fun
 
 # this a is a comment
 name: This is Oli
-version 0.1.0
+version: 0.1.0
 
 author:
   name: Tomas Aparicio
@@ -54,13 +54,18 @@ deploy (zeus):
   port: 9000 # this is a number
   # nested block
   authentication: 
-    # lists can implicit used with commas
+    # lists can be implicit used with commas
     tokens: 
       %1DOTnv6B9b]n7pbV535,
       p16O2$)9,Z63bD&Q-82d
     end
   end
 end
+
+# multi-line unquoted string
+log:
+  /var/log/deploy.log
+  /var/log/error.log
 
 ```
 
