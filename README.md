@@ -1,5 +1,3 @@
-# Oli
-
 > **work in progress**
 
 <pre>
@@ -31,14 +29,14 @@
 
 ## Rationale
 
-Reinventing the wheel is fun
+Reinventing the wheel for fun
 
 ## Example
 
 ```ruby
 
 # this a is a comment
-name: Oli descripcion language
+name: This is Oli
 version 0.1.0
 
 author:
@@ -55,8 +53,12 @@ deploy (zeus):
   server: 'http://deploy.server.com' # strings can be quoted
   port: 9000 # this is a number
   # nested block
-  authentication (token): 
-    token: %1DOTnv6B9b]n7pbV535
+  authentication: 
+    # lists can implicit used with commas
+    tokens: 
+      %1DOTnv6B9b]n7pbV535,
+      p16O2$)9,Z63bD&Q-82d
+    end
   end
 end
 
