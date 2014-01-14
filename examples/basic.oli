@@ -3,6 +3,6 @@
 server: http://google.es
 port: 9000
 
-test (app): 
-  run test
+test: 
+  run: test.sh
 end
