@@ -17,7 +17,7 @@
   |                    |      | (_) | |_| |
   |~^~~~^~~^~~~^~~^~~^~|       \___/\___|_|
   |~^~~~^~~~^~~~~^~~^~~|  
-   |__________________|       Elegant and declarative minimalist language for general purposes
+   |__________________|       Elegant and declarative minimalist language
     :________________:
      `-..________..-´
 
