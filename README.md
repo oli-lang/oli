@@ -51,10 +51,10 @@ end
 ##
 deploy (zeus):
   server: 'http://deploy.server.com' # strings can be quoted
-  port: 9000 # number is a promitive value
+  port: 9000 # number is also a primitive value
   # nested block
   authentication: 
-    # lists can be implicit used with commas
+    # lists can be implicit using commas
     tokens: 
       %1DOTnv6B9b]n7pbV535,
       p16O2$)9,Z63bD&Q-82d
