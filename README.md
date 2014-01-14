@@ -23,7 +23,7 @@
 
 <table>
 <tr> 
-<td>Current version</td><td>0.1.0</td>
+<td>Version</td><td>0.1.0</td>
 </tr>
 </table>
 
@@ -63,6 +63,9 @@ deploy (zeus):
 end
 
 ```
+
+## Implementations
+
 
 ## Spec
 
