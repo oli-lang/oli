@@ -3,7 +3,7 @@
 > Elegant and declarative minimalist language for general purposes
 
 
-```
+<pre>
             __
            (__)
          _|__|_|_
@@ -22,7 +22,8 @@
     :________________:
      `-..________..-´
 
-```
+</pre>
+
 > **work in progress**
 
 <table>
