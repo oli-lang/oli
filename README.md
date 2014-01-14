@@ -43,7 +43,7 @@ author:
   name: Tomas Aparicio
   email: tomas@aparicio.me
   web: http://tomas.aparicio.me
-  social: no # a boolean primitive
+  social: no # boolean primitive value
 end 
 
 ##
@@ -51,7 +51,7 @@ end
 ##
 deploy (zeus):
   server: 'http://deploy.server.com' # strings can be quoted
-  port: 9000 # this is a number
+  port: 9000 # number is a promitive value
   # nested block
   authentication: 
     # lists can be implicit used with commas
@@ -71,7 +71,12 @@ log:
 
 ## Implementations
 
+- [JavaScript][1] (node.js and the browser)
 
 ## Spec
 
 ### 
+
+
+[1]: https://github.com/h2non/oli.js
+
