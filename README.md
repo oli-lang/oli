@@ -98,17 +98,19 @@ You can use Unicode characters, but they must be defined using the escaped unico
 
 ```
 ValueStatement =
-  ValueIdentifier [ ValueMetaIdentifier ] : ( PrimitiveType | List ) ... EndOfLine
+  ValueIdentifier [ MetaIdentifier ] : ( PrimitiveType | ListStatement ) ... EndOfLine
 ```
 
 #### Block Statement
 
 ```
 BlockStatement =
-  BlockIdentifier [ BlockMetaIdentifier ] :
+  BlockIdentifier [ MetaIdentifier ] :
     ( BlockStatement | ListStatement | PrimitiveType ) ...
   EndToken
 ```
+
+#### MetaIdentifier
 
 ### Primitive Types
 
