@@ -33,18 +33,27 @@ First, reinventing the wheel is funny, but doing it with a bit of improvements i
 
 Secondary, there are a lot of file formats, but mush of them
 
+## Design Goals
+
+- Minimal sintax with free-grammar use
+- Focus on the content, not on the sintax
+- Type inference including unquoted strings
+- Allow nested structures and lists
+- Primitive types with semantics association
+- The parser should be smart, not the human
+
 ## Oli is useful for
 
 - Create sintax clean and readable configuration files
-- Create a DSL for humans
-- Simply storage human-writable/readable data
+- Create you own DSL
+- Store human-writable/readable focused data
 
 ## Example
 
 ```ruby
 
 # this a is a comment
-name: This is Oli
+name: Hello Oli!
 version: 0.1.0
 
 author:
@@ -133,7 +142,7 @@ Strings can be defined without quotes, but this is not applicable to all cases.
 
 Strings which contain one of the following characters must be quoted or escaped:
 ```
-: , ' "
+: , ' " #
 ```
 
 ```
