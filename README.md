@@ -29,13 +29,15 @@
 
 ## Rationale
 
-Reinventing the wheel just for fun
+First, reinventing the wheel is funny, but doing it with a bit of improvements is exciting.
+
+Secondary, there are a lot of file formats, but mush of them
 
 ## Oli is useful for
 
-- Create minimal and sintax clean and readable configuration files
-- Create DSL for manifest files
--  
+- Create sintax clean and readable configuration files
+- Create a DSL for humans
+- Simply storage human-writable/readable data
 
 ## Example
 
@@ -50,7 +52,7 @@ author:
   email: tomas@aparicio.me
   web: http://tomas.aparicio.me
   social: no # boolean primitive value
-end 
+end
 
 ##
   Multi-line comment
@@ -110,6 +112,8 @@ BlockStatement =
   EndToken
 ```
 
+#### ListStatement
+
 #### MetaIdentifier
 
 ### Primitive Types
@@ -131,23 +135,32 @@ Strings which contain one of the following characters must be quoted or escaped:
 ```
 : , ' "
 ```
+
 ```
 whitespaces
 [a-zA-Z0-9]
 [-|_|.|`|^|=|?|¿|¡|!|@|$|%|&|/|(|)|*]
 ```
 
-Of course, it's supported to define string with quotes
+Of course, it's supported to define strings with quotes
 
 ```javascript
 'this is a single-quoted string'
 "and this one is double-quoted"
-and finally this one without quoted
+and finally this one without quotes
 ```
 
 #### Number
 
+Numbers can be `integer` or `float`
+```
+123
+12.5342
+```
+
 ### Reserved Keywords
+
+You must escape or quote the following values in strings unquoted chains
 
 ```
 end
@@ -157,6 +170,22 @@ yes
 no
 :
 ```
+
+## Contributing
+
+Wanna help? Cool!
+
+- USE IT!
+- Open an issue with your ideas
+- Make pull request
+- Write a parser
+
+## License
+
+Copyright (c) Tomas Aparicio
+
+Released under the MIT license
+
 
 [1]: https://github.com/h2non/oli.js
 
