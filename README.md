@@ -31,6 +31,12 @@
 
 Reinventing the wheel just for fun
 
+## Oli is useful for
+
+- Create minimal and sintax clean and readable configuration files
+- Create DSL for manifest files
+-  
+
 ## Example
 
 ```ruby
@@ -73,10 +79,82 @@ log:
 
 - [JavaScript][1] (node.js and the browser)
 
-## Spec
+## Language Spec
 
-### 
+### MIME Type
 
+Both MIME types can be used:
+- application/oli
+- text/oli
+
+### Character encoding
+
+Oli only supports UTF-8 character encoding.
+You can use Unicode characters, but they must be defined using the escaped unicode entity value
+
+### Sintax Expressions
+
+#### Value Statement
+
+```
+ValueStatement =
+  ValueIdentifier [ ValueMetaIdentifier ] : ( PrimitiveType | List ) ... EndOfLine
+```
+
+#### Block Statement
+
+```
+BlockStatement =
+  BlockIdentifier [ BlockMetaIdentifier ] :
+    ( BlockStatement | ListStatement | PrimitiveType ) ...
+  EndToken
+```
+
+### Primitive Types
+
+#### Boolean
+
+```coffeescript
+true
+false
+yes
+no
+```
+
+#### String
+
+Strings can be defined without quotes, but this is not applicable to all cases.
+
+Strings which contain one of the following characters must be quoted or escaped:
+```
+: , ' "
+```
+```
+whitespaces
+[a-zA-Z0-9]
+[-|_|.|`|^|=|?|¿|¡|!|@|$|%|&|/|(|)|*]
+```
+
+Of course, it's supported to define string with quotes
+
+```javascript
+'this is a single-quoted string'
+"and this one is double-quoted"
+and finally this one without quoted
+```
+
+#### Number
+
+### Reserved Keywords
+
+```
+end
+true
+false
+yes
+no
+:
+```
 
 [1]: https://github.com/h2non/oli.js
 
