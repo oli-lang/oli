@@ -1,4 +1,4 @@
-> **work in progress**
+> **exciting work in progress**
 
 <pre>
             __
@@ -15,7 +15,7 @@
   |                    |      | (_) | |_| |
   |~^~~~^~~^~~~^~~^~~^~|       \___/\___|_|
   |~^~~~^~~~^~~~~^~~^~~|  
-   |__________________|       Elegant and declarative minimal language
+   |__________________|    Elegant, featured and declarative minimal language
     :________________:
      `-..________..-´
 
@@ -27,26 +27,34 @@
 </tr>
 </table>
 
+<!--
+Hate reading docs? [Try it online](http://h2non.github.io/oli.js)!
+-->
+
 ## Rationale
 
-First, reinventing the wheel is funny, but doing it with a bit of improvements is exciting.
+First, reinventing the wheel is funny, but doing it with a bit of improvements is exciting
 
-Secondary, there are a lot of file formats, but mush of them
+There are a lot of [lightweight markup languages][2], but mush of them
 
 ## Design Goals
 
-- Minimal sintax with free-grammar use
-- Focus on the content, not on the sintax
-- Type inference including unquoted strings
-- Allow nested structures and lists
+- Simple sintax, but featured built-in rich possibilities
+- Unobstructive minimal sintax grammar-free for DSL
+- Type inference and powerful pattern matching
+- Easy nested structures and lists
 - Primitive types with semantics association
-- The parser should be smart, not the human
+- The parser should think instead of a human
+- Data references are first class supported, avoid redundancy!
+- Templating support, why not?
+- Focus on the content, not on the sintax
 
 ## Oli is useful for
 
 - Create sintax clean and readable configuration files
-- Create you own DSL
-- Store human-writable/readable focused data
+- Create you own DSL for general purposes
+- Store human-writable/readable data (like manifest files)
+- Data interchange format for trivial structures
 
 ## Example
 
@@ -66,9 +74,10 @@ end
 ##
   Multi-line comment
 ##
-deploy (zeus):
-  server: 'http://deploy.server.com' # strings can be quoted
-  port: 9000 # number is also a primitive value
+deploy > zeus:
+  server > server.url: 'http://zeus.server.com' # strings can be quoted
+  port: 9000 # number as primitive value
+  retry: yes
   # nested block
   authentication: 
     # lists can be implicit using commas
@@ -78,6 +87,19 @@ deploy (zeus):
     end
   end
 end
+
+# extends from zeus block
+deploy >> zeus > era:
+  server: 'http://era.server.com'
+end
+
+# creates a new block coping era
+deploy => era
+
+# short-hand reference declaration operator
+&flags: --debug, --trace
+
+command: server.sh start #{flags}
 
 # multi-line unquoted string
 log:
@@ -92,27 +114,78 @@ log:
 
 ## Language Spec
 
-### MIME Type
+### Stage
+
+Oli language specficication is under active desinging process
+
+#### Versioning
+
+Oli uses the semantic version 
+
+### General
+
+#### File extension
+
+The proposed file extension is (as abvious): `oli`
+
+#### MIME Type
 
 Both MIME types can be used:
 - application/oli
 - text/oli
 
-### Character encoding
+#### Character encoding
 
-Oli only supports UTF-8 character encoding.
+Oli only must support UTF-8 character encoding
+
 You can use Unicode characters, but they must be defined using the escaped unicode entity value
 
-### Sintax Expressions
+### Built-in operators
 
-#### Value Statement
+#### Assignment
+
+`:`
+
+#### Identifier Assignment
+
+`>`
+
+#### Reference
+
+`&`
+
+#### Extend
+
+`>>`
+
+#### Merge
+
+`>>>`
+
+#### Clone
+
+`=>`
+
+#### 
+
+#### Templating
+
+String interpolation `#{` and `}`
+
+### Sintax
+
+Examples are defined based on context-free grammar EBNF-like sintaxis
+
+#### Expressions
+
+##### Value Statement
 
 ```
 ValueStatement =
   ValueIdentifier [ MetaIdentifier ] : ( PrimitiveType | ListStatement ) ... EndOfLine
 ```
 
-#### Block Statement
+##### Block Statement
 
 ```
 BlockStatement =
@@ -121,9 +194,9 @@ BlockStatement =
   EndToken
 ```
 
-#### ListStatement
+##### ListStatement
 
-#### MetaIdentifier
+##### MetaIdentifier
 
 ### Primitive Types
 
@@ -180,14 +253,19 @@ no
 :
 ```
 
+## Whishful Thinking
+
+- Identation support for nested blocks
+
 ## Contributing
 
 Wanna help? Cool!
 
 - USE IT!
+- Write a parser
+- Write a sintax highlighter
 - Open an issue with your ideas
 - Make pull request
-- Write a parser
 
 ## License
 
@@ -197,4 +275,4 @@ Released under the MIT license
 
 
 [1]: https://github.com/h2non/oli.js
-
+[2]: http://en.wikipedia.org/wiki/Lightweight_markup_language
