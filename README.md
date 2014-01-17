@@ -89,17 +89,17 @@ deploy > zeus:
 end
 
 # extends from zeus block
-deploy >> zeus > era:
-  server: 'http://era.server.com'
+deploy >> zeus > hera:
+  server: 'http://hera.server.com'
 end
 
 # creates a new block coping era
-deploy => era
+deploy => hera
 
 # short-hand reference declaration operator
 &flags: --debug, --trace
 
-command: server.sh start #{flags}
+command: server.sh start @{flags}
 
 # multi-line unquoted string
 log:
@@ -112,7 +112,9 @@ log:
 
 - [JavaScript][1] (node.js and the browser)
 
-## Language Spec
+# Language Spec
+
+## Overview
 
 ### Stage
 
@@ -140,41 +142,144 @@ Oli only must support UTF-8 character encoding
 
 You can use Unicode characters, but they must be defined using the escaped unicode entity value
 
-### Built-in operators
+## Lexical Conventions
 
-#### Assignment
+### Whites Space
 
-`:`
+### Line Terminators
 
-#### Identifier Assignment
+### Comments
+
+### Tokens
+
+### Keywords
+
+### Reserved Words
+
+### Punctuators
+
+### Literals
+
+#### Boolean
+
+#### Number
+
+#### String
+
+## Expressions
+
+### Identifiers
+
+#### Literal Identifier
+
+#### String Identifier
+
+### Types
+
+### Operators
+
+Oli introduces common set of built-in operators that can be really useful
+
+#### Unary operators
+
+##### Postfix Increment
+
+`++`
+
+##### Postfix Decrement
+
+`--`
+
+##### Void
+
+`void`
+
+##### Logical NOT
+
+`!`
+
+### Binary operators
+
+##### Multiplicate
+
+`*`
+
+##### Divisor
+
+`/`
+
+##### Addition
+
+`+`
+
+##### Subtraction
+
+`-`
+
+##### Less-than 
+
+`<`
+
+##### Greater than
 
 `>`
 
-#### Reference
+##### Less-than-or-equal
+
+`<=`
+
+##### Greater-than-or-equal
+
+`>=` 
+
+##### Equals
+
+`==`
+
+##### Does-not-equals 
+
+`!=`
+
+##### Assignment
+
+`:`
+
+##### Comma
+
+`,`
+
+
+##### Identifier Assignment
+
+`>`
+
+##### Reference
 
 `&`
 
-#### Extend
+##### Extend
 
 `>>`
 
-#### Merge
+##### Merge
 
 `>>>`
 
-#### Clone
+##### Clone
 
 `=>`
 
-#### 
+##### Template
+
+`@`
+
+### Statements
+
+Examples are defined based on context-free grammar EBNF-like sintaxis
 
 #### Templating
 
-String interpolation `#{` and `}`
-
-### Sintax
-
-Examples are defined based on context-free grammar EBNF-like sintaxis
+String interpolation `@{` and `}`
 
 #### Expressions
 
@@ -256,6 +361,9 @@ no
 ## Whishful Thinking
 
 - Identation support for nested blocks
+- Math operators
+- Math expressions
+- Date as first class type?
 
 ## Contributing
 
