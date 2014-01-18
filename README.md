@@ -53,7 +53,7 @@ and it's not easy to take an ideal choice
 - First class primitive types: boolean, number and strings
 - Lists and data hash maps with nested structures
 - Data references (formally variables)
-- Data structures with copy and extend support
+- Copy or extend data structures or values by reference
 - String interpolation
 - Built-in logic and math operators
 
