@@ -51,11 +51,11 @@ and it's not easy to take an ideal choice
 ## Language Features
 
 - First class primitive types: boolean, number and strings
-- Lists and data hash maps with nested structures
+- List and data hashmaps with nested support
 - Data references (formally variables)
-- Copy or extend data structures or values by reference
+- Copy and extend data structures or values
 - String interpolation
-- Built-in logic and math operators
+- Built-in logical and math operators
 
 ## Design Goals
 
@@ -113,7 +113,7 @@ deploy >> zeus > hera:
   server: 'http://hera.server.com'
 end
 
-# creates a new block coping era
+# creates a copy of hera block
 deploy => hera
 
 # short-hand reference declaration operator
@@ -125,6 +125,7 @@ command: server.sh start *{flags}
 log:
   /var/log/deploy.log
   /var/log/error.log
+end
 
 ```
 
