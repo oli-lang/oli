@@ -384,3 +384,7 @@ Released under the MIT license
 
 [1]: https://github.com/h2non/oli.js
 [2]: http://en.wikipedia.org/wiki/Lightweight_markup_language
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/h2non/oli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
