@@ -23,7 +23,7 @@
 
 <table>
 <tr> 
-<td>Version</td><td>0.1.0</td>
+<td>Language Spec Version</td><td>0.1.0</td>
 </tr>
 </table>
 
@@ -33,9 +33,29 @@ Hate reading docs? [Try it online](http://h2non.github.io/oli.js)!
 
 ## Rationale
 
-First, reinventing the wheel is funny, but doing it with a bit of improvements is exciting
+<!--
+1. Reinventing the wheel is funny, but doing it with a bit of improvements is exciting
+-->
 
-There are a lot of [lightweight markup languages][2], but mush of them
+Oli aims to be a confortable minimal language for general purposes which provides a mix of 
+features from common markup languages and some basic features from programming languages
+
+Oli has a beutiful and clean syntax with a non-obstructive grammar, that allows to you to create your own DSL.
+It was designed to be mainly consumed by humans
+
+<!--
+There are a lot of [lightweight languages][2], however not much of them are not confortable 
+and it's not easy to take an ideal choice
+-->
+
+## Language Features
+
+- First class primitive types: boolean, number and strings
+- Lists and data hash maps with nested structures
+- Data references (formally variables)
+- Data structures with copy and extend support
+- String interpolation
+- Built-in logic and math operators
 
 ## Design Goals
 
@@ -99,7 +119,7 @@ deploy => hera
 # short-hand reference declaration operator
 &flags: --debug, --trace
 
-command: server.sh start @{flags}
+command: server.sh start *{flags}
 
 # multi-line unquoted string
 log:
@@ -268,6 +288,8 @@ Oli introduces common set of built-in operators that can be really useful
 ##### Clone
 
 `=>`
+
+#### Operator Precedence
 
 ##### Template
 
