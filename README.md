@@ -23,7 +23,7 @@
 
 <table>
 <tr> 
-<td>Language Spec Version</td><td>0.1.0</td>
+<td>Language Specification Version</td><td>0.1.0</td>
 </tr>
 </table>
 
