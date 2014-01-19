@@ -136,7 +136,7 @@ deploy:> hera
 command: server.sh start *{flags}
 &fallback port: {{ *{flags} + 100 }}
 
-# comparison operators, returns true
+# comparison operators, return a boolean
 enable: {{ *{fallback port} < 9100 }}
 
 # multi-line unquoted string
