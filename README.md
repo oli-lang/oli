@@ -404,7 +404,7 @@ no
 
 ## Contributing
 
-Wanna help? Cool!
+Wanna help? It will be really apreciated!
 
 - USE IT!
 - Write a parser
