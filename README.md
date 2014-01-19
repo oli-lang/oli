@@ -51,22 +51,23 @@ and it's not easy to take an ideal choice
 ## Language Features
 
 - First class primitive types: boolean, number and strings
-- List and data hashmaps with nested support
+- List and data hashmaps support with nested support
 - Data references (formally variables)
-- Copy and extend data structures or values
-- String interpolation
+- Copy or extend data structures and values
+- Templaiting with string interpolation support 
 - Built-in logical, comparison and math operators
 
 ## Design Goals
 
-- Simple sintax, but featured built-in rich possibilities
-- Unobstructive minimal sintax grammar-free for DSL
+- Simple but built-in rich features
+- Unobstructive minimal sintax grammar-free for DSL usage
 - Type inference and powerful pattern matching
-- Easy nested structures and lists
-- Primitive types with semantics association
-- Parsers should think more than human
-- Data references are first class supported, avoid redundancy!
-- Templating support, why not?
+- Easy to use nested structures and lists
+- Useful primitive types with semantics association
+- Parser intelligence, it should think more than human
+- Data references as first class support (no more redundancy!)
+- Templating support (why not?)
+- Implements programming languages basic operators
 - Focus on the content, not on the sintax
 
 ## Oli is useful for
@@ -133,7 +134,10 @@ deploy:> hera
 
 # templaiting
 command: server.sh start *{flags}
-fallback port: {{*{flags} + 100}}
+&fallback port: {{ *{flags} + 100 }}
+
+# comparison operators, returns true
+enable: {{ *{fallback port} < 9100 }}
 
 # multi-line unquoted string
 log:
