@@ -121,7 +121,7 @@ deploy:> hera
 
 # templaiting
 command: server.sh start *{flags}
-fallback port: @{*{flags} + 100}
+fallback port: {{*{flags} + 100}}
 
 # multi-line unquoted string
 log:
