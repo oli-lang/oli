@@ -1,5 +1,3 @@
-> **exciting work in progress**
-
 <pre>
             __
            (__)
@@ -26,6 +24,8 @@
 <td>Language specification version</td><td>0.1.0</td>
 </tr>
 </table>
+
+> **Draft version! Oli is still under exciting designing process**
 
 <!--
 Hate reading docs? [Try it online](http://h2non.github.io/oli.js)!
@@ -55,7 +55,7 @@ and it's not easy to take an ideal choice
 - Data references (formally variables)
 - Copy and extend data structures or values
 - String interpolation
-- Built-in logical and math operators
+- Built-in logical, comparison and math operators
 
 ## Design Goals
 
@@ -64,7 +64,7 @@ and it's not easy to take an ideal choice
 - Type inference and powerful pattern matching
 - Easy nested structures and lists
 - Primitive types with semantics association
-- The parser should think instead of a human
+- Parsers should think more than human
 - Data references are first class supported, avoid redundancy!
 - Templating support, why not?
 - Focus on the content, not on the sintax
