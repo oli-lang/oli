@@ -132,7 +132,7 @@ deploy:> hera
 # short-hand reference declaration operator
 &flags: --debug --trace
 
-# templaiting
+# templating
 command: server.sh start *{flags}
 &fallback port: {{ *{flags} + 100 }}
 
