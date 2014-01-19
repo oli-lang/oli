@@ -110,7 +110,19 @@ end
 
 # extends from zeus block
 server deploy >> zeus > hera:
-  server:> host url
+  server: 'http://hera.server.com'
+end
+
+# in-line nested structures
+hey: you: are: seeing: oli!
+
+# multi-line nested structures
+do:
+  you: # implitic list
+    born
+    in # this is a string
+    [ 80, 'th' ], ? # old, ehn?
+  end
 end
 
 # creates a copy of hera block
