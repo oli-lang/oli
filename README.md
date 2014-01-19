@@ -114,7 +114,7 @@ deploy >> zeus > hera:
 end
 
 # creates a copy of hera block
-deploy => hera
+deploy:> hera
 
 # short-hand reference declaration operator
 &flags: --debug, --trace
