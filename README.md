@@ -87,21 +87,21 @@ version: 0.1.0
 author:
   name: Tomas Aparicio
   email: tomas@aparicio.me
-  web: http://tomas.aparicio.me
+  web: 'http://tomas.aparicio.me'
   social: no # boolean primitive value
 end
 
 ##
   Multi-line comment
 ##
-deploy > zeus:
-  server > server.url: 'http://zeus.server.com' # strings can be quoted
-  port: 9000 # number as primitive value
+server deploy > zeus:
+  server > host url: 'http://zeus.server.com' # strings can be quoted
+  &port: 9000 # number as primitive value
   retry: yes
   # nested block
   authentication: 
     # lists can be implicit using commas
-    tokens: 
+    tokens:
       %1DOTnv6B9b]n7pbV535,
       p16O2$)9,Z63bD&Q-82d
     end
@@ -109,17 +109,19 @@ deploy > zeus:
 end
 
 # extends from zeus block
-deploy >> zeus > hera:
-  server: 'http://hera.server.com'
+server deploy >> zeus > hera:
+  server:> host url
 end
 
 # creates a copy of hera block
 deploy:> hera
 
 # short-hand reference declaration operator
-&flags: --debug, --trace
+&flags: --debug --trace
 
+# templaiting
 command: server.sh start *{flags}
+fallback port: @{*{flags} + 100}
 
 # multi-line unquoted string
 log:
