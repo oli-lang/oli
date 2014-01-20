@@ -78,10 +78,28 @@ and it's not easy to take an ideal choice
 - Data interchange format for trivial structures
 - Simple templating sintaxis
 
-## Example
+## Examples
 
+You can use Oli as pretty markup templating language with powerful built-in features
 ```ruby
+!DOCTYPE html
+html:
+  head:
+    &title: Welcome to Oli!
+  end
+  body:
+    h1:> title 
+    # this is a in-line comment!
+    div(class: container):
+      p(class: main-title): This is a paragraph
+      a(href: 'http://h2non.github.io/oli', title: Link): Oli Spec
+    end
+  end
+end
+```
 
+Or like own DSL configuration file
+```ruby
 # this a is a comment
 name: Hello Oli!
 version: 0.1.0
@@ -149,7 +167,6 @@ log:
   /var/log/deploy.log
   /var/log/error.log
 end
-
 ```
 
 ## Implementations
