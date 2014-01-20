@@ -1,0 +1,14 @@
+!DOCTYPE html
+html:
+  head:
+    title: Welcome to Oli!
+  end
+  body:
+    h1: Heading title
+    # comment
+    div(class=container):
+      p: This is a paragraph
+      a(href="http://h2non.github.io/oli", title=Link): Oli Spec
+    end
+  end
+end

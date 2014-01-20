@@ -76,6 +76,7 @@ and it's not easy to take an ideal choice
 - Create you own DSL for general purposes
 - Store human-writable/readable data (like manifest files)
 - Data interchange format for trivial structures
+- Simple templating sintaxis
 
 ## Example
 
@@ -117,8 +118,9 @@ end
 # in-line nested structures
 hey: you: are: seeing: oli!
 
-# multi-line nested structures
-do:
+# blocks can have attributes
+do(alias=make, type='user question'):
+  # multi-line nested structures
   you: # implitic list
     born
     in # this is a string
@@ -131,6 +133,9 @@ deploy:> hera
 
 # short-hand reference declaration operator
 &flags: --debug --trace
+# hidden variable in compilation output 
+!&verbose: --verbose
+
 
 # templating
 command: server.sh start *{flags}
