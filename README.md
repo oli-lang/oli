@@ -117,8 +117,8 @@ end
 ##
 server deploy > zeus:
   server > host url: 'http://zeus.server.com' # strings can be quoted
-  &port: 9000 # number as primitive value
-  retry: yes
+  port: 9000 # number as primitive value
+  retry: yes # yes is a primitive 
   # nested block
   authentication: 
     # lists can be implicit using commas
@@ -155,7 +155,6 @@ deploy:> hera
 # hidden variable in compilation output 
 !&verbose: --verbose
 
-
 # templating
 command: server.sh start *{flags}
 &fallback port: {{ *{flags} + 100 }}
@@ -174,7 +173,11 @@ end
 
 - [JavaScript][1] (node.js and the browser)
 
-# Language Spec
+# Sintax Overview
+
+`TODO`
+
+# Language Specification
 
 ## Overview
 
