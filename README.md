@@ -40,7 +40,7 @@ Hate reading docs? [Try it online](http://h2non.github.io/oli.js)!
 Oli aims to be a confortable minimal language for general purposes which provides a mix of 
 features from common markup languages and some basic features from programming languages
 
-Oli has a beutiful and clean syntax with a non-obstructive grammar, that allows to you to create your own DSL.
+It has a beutiful, readable and clean syntax with a non-obstructive grammar, that allows to you to create your own DSL.
 It was designed to be mainly consumed by humans
 
 <!--
@@ -76,7 +76,7 @@ and it's not easy to take an ideal choice
 - Create you own DSL for general purposes
 - Store human-writable/readable data (like manifest files)
 - Data interchange format for trivial structures
-- Simple templating sintaxis
+- Powerful markup-like templating language
 
 ## Examples
 
@@ -88,11 +88,12 @@ html:
     &title: Welcome to Oli!
   end
   body:
+    # i'm using a reference that points to 'title'
     h1:> title 
     # this is a in-line comment!
-    div(class: container):
-      p(class: main-title): This is a paragraph
-      a(href: 'http://h2non.github.io/oli', title: Link): Oli Spec
+    div(class: container, id: main):
+      p(class: main-title another-class): This is a paragraph
+      a(href: 'http://h2non.github.io/oli', title: click here!): Oli Spec
     end
   end
 end
