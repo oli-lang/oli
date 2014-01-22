@@ -159,6 +159,39 @@ deploy:> hera
 command: server.sh start *{flags}
 &fallback port: {{ *{flags} + 100 }}
 
+# wishful thinking: olie code structures 
+# with trivial but useful control flow structures and data coercion
+value: ``
+  # code block scope variable
+  local: 100
+  # empty vector
+  store: []
+  # switch control structure
+  switch *{port}
+    # "it" implicitcly references to the code 
+    # control structure evaluated value
+    when it is 0 | it > 10 then?
+      # return a value
+      <- it ^ 2 * 3 / 0.5
+    end
+    when it > *{local} then?
+      <- it / 2
+    end
+  end
+  # conditional structure
+  when *{port} < 100 then <- 100
+  unless *{port} then <- 1000
+  # for loop
+  for &item, &index of *{list}
+    # basic built-in operators for data 
+    # structures manipulation and mutation
+    do -> add (item) in store
+    do -> get (index + 1) in store
+    do -> remove (index) in store
+    do -> update (index+1) to (item) in store
+  end
+``
+
 # comparison operators, return a boolean
 enable: {{ *{fallback port} < 9100 }}
 
