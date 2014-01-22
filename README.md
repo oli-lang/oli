@@ -177,6 +177,9 @@ value: ``
     when it > *{local} then?
       <- it / 2
     end
+    otherwise
+      <- it * 10
+    end
   end
   # conditional structure
   when *{port} < 100 then <- 100
