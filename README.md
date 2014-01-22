@@ -82,6 +82,8 @@ and it's not easy to take an ideal choice
 
 ## Examples
 
+> Proposed sintax
+
 You can use Oli as pretty markup templating language with powerful built-in features
 ```ruby
 !DOCTYPE html
