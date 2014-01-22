@@ -19,11 +19,13 @@
 
 </pre>
 
+<!--
 <table>
 <tr> 
 <td>Language specification version</td><td>0.1.0</td>
 </tr>
 </table>
+-->
 
 > **Draft version! Oli is still under exciting designing process**
 
@@ -147,6 +149,9 @@ do(alias: make, type: 'user question'):
   end
 end
 
+# void native type, that representes undefined
+non existence: void
+
 # creates a copy of hera block
 deploy:> hera
 
@@ -168,14 +173,15 @@ value: ``
   # empty vector
   store: []
   # switch control structure
+  # uses the *{} notation to reference values outside of the scope
   switch *{port}
-    # "it" implicitcly references to the code 
+    # "it" implicitly references to the code 
     # control structure evaluated value
     when it is 0 | it > 10 then?
       # return a value
       <- it ^ 2 * 3 / 0.5
     end
-    when it > *{local} then?
+    when it > local then?
       <- it / 2
     end
     otherwise
@@ -187,7 +193,7 @@ value: ``
   unless *{port} then <- 1000
   # for loop
   for &item, &index of *{list}
-    # basic built-in operators for data 
+    # possible built-in operators and expressions for data 
     # structures manipulation and mutation
     do -> add (item) in store
     do -> get (index + 1) in store
