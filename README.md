@@ -157,6 +157,7 @@ deploy:> hera
 
 # templating
 command: server.sh start *{flags}
+# math expressions
 &fallback port: {{ *{flags} + 100 }}
 
 # wishful thinking: olie code structures 
