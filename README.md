@@ -138,7 +138,7 @@ end
 hey: you: are: seeing: oli!
 
 # blocks can have attributes
-do(alias=make, type='user question'):
+do(alias: make, type: 'user question'):
   # multi-line nested structures
   you: # implitic list
     born
