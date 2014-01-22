@@ -216,7 +216,7 @@ end
 
 ## Implementations
 
-- [JavaScript][1] (node.js and the browser)
+- [JavaScript][implemenentation-javascript] (node.js and the browser)
 
 # Sintax Overview
 
@@ -494,7 +494,7 @@ Copyright (c) Tomas Aparicio
 Released under the MIT license
 
 
-[1]: https://github.com/h2non/oli.js
+[implementation-javascript]: https://github.com/oli-lang/oli.js
 [2]: http://en.wikipedia.org/wiki/Lightweight_markup_language
 
 
