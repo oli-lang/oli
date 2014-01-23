@@ -216,7 +216,7 @@ end
 
 ## Implementations
 
-- [JavaScript][implemenentation-javascript] (node.js and the browser)
+- [JavaScript][implementation-javascript] (node.js and the browser)
 
 # Sintax Overview
 
