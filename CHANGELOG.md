@@ -1,4 +1,4 @@
 
-0.0.1 `24.01.2014` 
+## 0.1.0 `25.01.2014` 
 
-  - Initial language specification, under active designing progress
+- Initial language specification, under active designing progress

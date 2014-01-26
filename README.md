@@ -19,6 +19,8 @@
 
 </pre>
 
+Visit the [Oli site][oli-site] for more information and documentation
+
 <!--
 <table>
 <tr> 
@@ -82,7 +84,7 @@ and it's not easy to take an ideal choice
 
 ## Examples
 
-> Proposed sintax
+> Note: this is still the proposed sintax
 
 You can use Oli as pretty markup templating language with powerful built-in features
 ```ruby
@@ -102,6 +104,36 @@ html:
   end
 end
 ```
+<!--
+As syntactically stylesheets minimal language
+```ruby
+body:
+  &font-family: Georgia, "Times New Roman", Times, serif
+  color: purple
+  background-color: #d8da3d
+end
+
+html:
+  font-size: 62.5%
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+end
+
+body:
+  font-family:> font-family
+  font-size: 15px
+  line-height: 1.428571429
+  color: #2c3e50
+  background-color: #ffffff
+end
+
+input,
+button,
+select,
+textarea:
+  font-family: inherit
+end
+```
+-->
 
 Or like own DSL configuration file
 ```ruby
@@ -494,9 +526,8 @@ Copyright (c) Tomas Aparicio
 Released under the MIT license
 
 
-[implementation-javascript]: https://github.com/oli-lang/oli.js
-[2]: http://en.wikipedia.org/wiki/Lightweight_markup_language
-
-
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/h2non/oli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+[oli-site]: http://oli-lang.org
+[implementation-javascript]: https://github.com/oli-lang/oli.js
+[2]: http://en.wikipedia.org/wiki/Lightweight_markup_language
