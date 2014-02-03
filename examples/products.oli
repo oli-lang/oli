@@ -1,0 +1,10 @@
+--
+# Products purchased
+- name: Super Hoop
+- item: 
+    name:  Basketball
+    price: 23.87
+    offer: yes
+  end
+- name: Big Shoes
+- name: iPad

@@ -13,44 +13,48 @@
   |                    |      | (_) | |_| |
   |~^~~~^~~^~~~^~~^~~^~|       \___/\___|_|
   |~^~~~^~~~^~~~~^~~^~~|  
-   |__________________|    Elegant, featured and declarative minimal language
+   |__________________|
     :________________:
      `-..________..-´
 
 </pre>
 
-Visit the [Oli site][oli-site] for more information and documentation
+Visit the [Oli site][oli-site] for more information
 
-<!--
+> **Draft version! Oli language specification is under active discussion process**
+
 <table>
 <tr> 
-<td>Language specification version</td><td>0.1.0</td>
+<td>Current version</td><td>0.1</td>
+<td>Stage</td><td>Unfinished (under discussion)</td>
 </tr>
 </table>
--->
 
-> **Draft version! Oli is still under exciting designing process**
+## About
+
+Oli aims to be a confortable minimal language for general purposes which provides a mix of features from common markup languages and some basic features from programming languages
+
+It has a beutiful, elegant and clean syntax with unobstructive grammar, that allows to use it for multiple purposes, like creating your own DSL. It was designed to be mainly consumed by humans
+
+## Language Specification
+
+You can see the current unfinished language specification [here][oli-docs]
+
+Language features, sintax and enhancements are begin discussed on [Github][oli-discussion]
+
+## Implementations
+
+- [JavaScript][implementation-javascript] (node.js and the browser)
+- [Java][implementation-java] (in progress)
 
 <!--
-Hate reading docs? [Try it online](http://h2non.github.io/oli.js)!
--->
-
 ## Rationale
-
-<!--
-1. Reinventing the wheel is funny, but doing it with a bit of improvements is exciting
--->
 
 Oli aims to be a confortable minimal language for general purposes which provides a mix of 
 features from common markup languages and some basic features from programming languages
 
 It has a beutiful, readable and clean syntax with a non-obstructive grammar, that allows to you to create your own DSL.
 It was designed to be mainly consumed by humans
-
-<!--
-There are a lot of [lightweight languages][2], however not much of them are not confortable 
-and it's not easy to take an ideal choice
--->
 
 ## Language Features
 
@@ -104,152 +108,9 @@ html:
   end
 end
 ```
-<!--
-As syntactically stylesheets minimal language
-```ruby
-body:
-  &font-family: Georgia, "Times New Roman", Times, serif
-  color: purple
-  background-color: #d8da3d
-end
-
-html:
-  font-size: 62.5%
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
-end
-
-body:
-  font-family:> font-family
-  font-size: 15px
-  line-height: 1.428571429
-  color: #2c3e50
-  background-color: #ffffff
-end
-
-input,
-button,
-select,
-textarea:
-  font-family: inherit
-end
-```
 -->
 
-Or like own DSL configuration file
-```ruby
-# this a is a comment
-name: Hello Oli!
-version: 0.1.0
-
-author:
-  name: Tomas Aparicio
-  email: tomas@aparicio.me
-  web: 'http://tomas.aparicio.me'
-  social: no # boolean primitive value
-end
-
-##
-  Multi-line comment
-##
-server deploy > zeus:
-  server > host url: 'http://zeus.server.com' # strings can be quoted
-  port: 9000 # number as primitive value
-  retry: yes # yes is a primitive 
-  # nested block
-  authentication: 
-    # lists can be implicit using commas
-    tokens:
-      %1DOTnv6B9b]n7pbV535,
-      p16O2$)9,Z63bD&Q-82d
-    end
-  end
-end
-
-# extends from zeus block
-server deploy >> zeus > hera:
-  server: 'http://hera.server.com'
-end
-
-# in-line nested structures
-hey: you: are: seeing: oli!
-
-# blocks can have attributes
-do(alias: make, type: 'user question'):
-  # multi-line nested structures
-  you: # implitic list
-    born
-    in # this is a string
-    [ 80, 'th' ], ? # old, ehn?
-  end
-end
-
-# void native type, that representes undefined
-non existence: void
-
-# creates a copy of hera block
-deploy:> hera
-
-# short-hand reference declaration operator
-&flags: --debug --trace
-# hidden variable in compilation output 
-!&verbose: --verbose
-
-# templating
-command: server.sh start *{flags}
-# math expressions
-&fallback port: {{ *{flags} + 100 }}
-
-# wishful thinking: olie code structures 
-# with trivial but useful control flow structures and data coercion
-value: ``
-  # code block scope variable
-  local: 100
-  # empty vector
-  store: []
-  # switch control structure
-  # uses the *{} notation to reference values outside of the scope
-  switch *{port}
-    # "it" implicitly references to the code 
-    # control structure evaluated value
-    when it is 0 | it > 10 then?
-      # return a value
-      <- it ^ 2 * 3 / 0.5
-    end
-    when it > local then?
-      <- it / 2
-    end
-    otherwise
-      <- it * 10
-    end
-  end
-  # conditional structure
-  when *{port} < 100 then <- 100
-  unless *{port} then <- 1000
-  # for loop
-  for &item, &index of *{list}
-    # possible built-in operators and expressions for data 
-    # structures manipulation and mutation
-    do -> add (item) in store
-    do -> get (index + 1) in store
-    do -> remove (index) in store
-    do -> update (index+1) to (item) in store
-  end
-``
-
-# comparison operators, return a boolean
-enable: {{ *{fallback port} < 9100 }}
-
-# multi-line unquoted string
-log:
-  /var/log/deploy.log
-  /var/log/error.log
-end
-```
-
-## Implementations
-
-- [JavaScript][implementation-javascript] (node.js and the browser)
-
+<!--
 # Sintax Overview
 
 `TODO`
@@ -501,23 +362,28 @@ yes
 no
 :
 ```
+-->
 
-## Whishful Thinking
+## Authors
 
-- Identation support for nested blocks
-- Math operators
-- Math expressions
-- Date as first class type?
+- [Tomas Aparicio](https://github.com/h2non)
+
+### Contributors 
+
+- Alvaro Alda
 
 ## Contributing
 
-Wanna help? It will be really apreciated!
+Oli is a community-driven project.
+The language specification is under active debate and enhancement process. It's open for everyone to discuss, you're welcome!
 
-- USE IT!
-- Write a parser
-- Write a sintax highlighter
-- Open an issue with your ideas
-- Make pull request
+How can I contribute?
+
+- Write a parser and compiler
+- Discuss the future specification and language features
+- Use it
+- Talk about it to your friends
+- Help improving the documentation
 
 ## License
 
@@ -529,5 +395,9 @@ Released under the MIT license
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/h2non/oli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [oli-site]: http://oli-lang.org
-[implementation-javascript]: https://github.com/oli-lang/oli.js
-[2]: http://en.wikipedia.org/wiki/Lightweight_markup_language
+[oli-docs]: http://docs.oli-lang.org
+[oli-discussion]: https://github.com/oli-lang/oli/issues?labels=discussion&page=1&state=open
+[wikipedia-markup]: http://en.wikipedia.org/wiki/Lightweight_markup_language
+
+[implementation-javascript]: https://github.com/oli-lang/oli-js
+[implementation-java]: https://github.com/oli-lang/oli-java

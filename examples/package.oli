@@ -1,37 +1,21 @@
-# finally a package manifest with comments, cool!
+# node.js package manifest written in Oli
 name: oli
 version: 0.1.0
 description: Oli language parser for node.js
-homepage > repoUrl: 'http://github.com/h2non/oli.js.git'
-bugs: 'https://github.com/h2non/oli.js/issues'
-
-author:
-  name: Tomas Aparicio
-end
+homepage > repoUrl: 'http://github.com/oli-lang/oli.js.git'
+bugs: 'https://github.com/oli-lang/oli.js/issues'
+author: name: Tomas Aparicio
+licenses: MIT
 
 repository:
   type: git
-  url:> repoUrl
+  url: *repoUrl
 end
 
-licenses: MIT
 main: lib/oli
-
-directories:
-  lib: ./lib
-end
-
-bin:
-  oli: ./bin/oli
-end
-
-engines:
-  node: >= 0.8.0
-end
-
-scripts:
-  test: grunt test
-end
+directories: lib: ./lib
+bin: oli: ./bin/oli
+engines: node: >= 0.8.0
 
 keywords:
   parser
@@ -54,12 +38,5 @@ devDependencies:
   grunt-contrib-watch: ~0.5.0
   grunt-contrib-clean: ~0.5.0
   matchdep: ~0.1.2
-  chai: ~1.8.1
-  grunt-release: ~0.6.0
-  grunt-livescript: ~0.5.1
-  LiveScript: ~1.2.0
-  mkdirp: ~0.3.5
-  suppose: ~0.3.0
   sinon: ~1.7.3
-  rimraf: ~2.2.4
 end

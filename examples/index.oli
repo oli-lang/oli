@@ -1,0 +1,16 @@
+!DOCTYPE html
+html:
+  head:
+    &title: This is Oli!
+  end
+  body:
+    # use a reference that points to 'title'
+    h1: *title 
+    # main container
+    div(class: container, id: main):
+      p(class: main-title another-class): 
+        | This is a paragraph
+      a(href: 'http://h2non.github.io/oli'): Oli Spec
+    end
+  end
+end
