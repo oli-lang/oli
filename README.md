@@ -26,7 +26,9 @@ Visit the [Oli site][oli-site] for more information
 <table>
 <tr> 
 <td>Current version</td><td>0.1</td>
-<td>Stage</td><td>Unfinished (under discussion)</td>
+</tr>
+<tr>
+  <td>Stage</td><td>Unfinished (under discussion)</td>
 </tr>
 </table>
 
