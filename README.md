@@ -25,10 +25,10 @@ Visit the [Oli site][oli-site] for more information
 
 <table>
 <tr> 
-<td>Current version</td><td>0.1</td>
+  <td>Current version</td><td>0.1</td>
 </tr>
 <tr>
-  <td>Stage</td><td>Unfinished (under discussion)</td>
+  <td>Stage</td><td>Unclosed (under discussion)</td>
 </tr>
 </table>
 
@@ -366,14 +366,6 @@ no
 ```
 -->
 
-## Authors
-
-- [Tomas Aparicio](https://github.com/h2non)
-
-### Contributors 
-
-- Alvaro Alda
-
 ## Contributing
 
 Oli is a community-driven project.
@@ -387,9 +379,14 @@ How can I contribute?
 - Talk about it to your friends
 - Help improving the documentation
 
+## Authors
+
+- [Tomas Aparicio](https://github.com/h2non)
+- Alvaro Alda
+
 ## License
 
-Copyright (c) Tomas Aparicio
+Copyright (c) Oli authors
 
 Released under the MIT license
 
