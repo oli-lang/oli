@@ -21,14 +21,14 @@
 
 Visit the [Oli site][oli-site] for more information
 
-> **Draft version! Oli language specification is under active discussion process**
+> **Draft Oli language specification is under active discussion process**
 
 <table>
 <tr> 
-  <td>Current version</td><td>0.1</td>
+  <td>**Language version**</td><td>0.1</td>
 </tr>
 <tr>
-  <td>Stage</td><td>Unclosed (under discussion)</td>
+  <td>**Stage**</td><td>Draft (under discussion)</td>
 </tr>
 </table>
 
@@ -38,11 +38,11 @@ Oli aims to be a confortable minimal language for general purposes which provide
 
 It has a beutiful, elegant and clean syntax with unobstructive grammar, that allows to use it for multiple purposes, like creating your own DSL. It was designed to be mainly consumed by humans
 
-## Language Specification
+## Language Documentation
 
-You can see the current unfinished language specification [here][oli-docs]
+You can see the existent draft version language specification [here][oli-docs]
 
-Language features, sintax and enhancements are begin discussed on [Github][oli-discussion]
+Language features, sintax and future enhancements are begin discussed on [Github][oli-discussion]
 
 ## Implementations
 
@@ -52,7 +52,8 @@ Language features, sintax and enhancements are begin discussed on [Github][oli-d
 ## Contributing
 
 Oli is a community-driven project.
-The language specification is under active debate and enhancement process. It's open for everyone to discuss, you're welcome!
+The language specification is under active debate and enhancement process. 
+It's open for everyone to discuss, you're welcome!
 
 How can I contribute?
 
