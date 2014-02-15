@@ -25,10 +25,10 @@ Visit the [Oli site][oli-site] for more information
 
 <table>
 <tr> 
-  <td>**Language version**</td><td>0.1</td>
+  <td><b>Language version</b></td><td>0.1</td>
 </tr>
 <tr>
-  <td>**Stage**</td><td>Draft (under discussion)</td>
+  <td><b>Stage</b>/td><td>Draft (under discussion)</td>
 </tr>
 </table>
 
