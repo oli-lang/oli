@@ -1,20 +1,15 @@
-Welcome to Oli Language's documentation!
-========================================
+Oli Language's documentation and reference
+==========================================
 
-Contents:
+Indices and tables
+------------------
 
 .. toctree::
    :maxdepth: 2
    
    overview
-   spec
+   specification
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 Examples
 --------
