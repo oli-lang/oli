@@ -21,39 +21,39 @@
 
 Visit the [Oli site][oli-site] for more information
 
-> **Draft Oli language specification is under active discussion process**
-
 <table>
 <tr> 
-  <td><b>Language version</b></td><td>0.1</td>
+  <td><b>Specification</b></td><td>v0.1</td>
 </tr>
 <tr>
-  <td><b>Stage</b>/td><td>Draft (under discussion)</td>
+  <td><b>Stage</b></td><td>Draft (under discussion)</td>
 </tr>
 </table>
 
 ## About
 
-Oli aims to be a confortable minimal language for general purposes which provides a mix of features from common markup languages and some basic features from programming languages
+**Oli** aims to be a confortable minimal declarative language for general purposes which provides a mix of features 
+from common markup languages and basic features from programming languages
 
-It has a beutiful, elegant and clean syntax with unobstructive grammar, that allows to use it for multiple purposes, like creating your own DSL. It was designed to be mainly consumed by humans
+It has a beutiful, elegant and clean syntax with unobstructive grammar, that allows to use it for multiple purposes. 
+It was designed to be mainly consumed by humans
 
-## Language Documentation
+## Documentation
 
-You can see the existent draft version language specification [here][oli-docs]
+You can review the current language draft specification [here][oli-docs]
 
-Language features, sintax and future enhancements are begin discussed on [Github][oli-discussion]
+Language features, syntax and future enhancements are actively begin discussed on [Github][oli-discussion]
 
 ## Implementations
 
-- [JavaScript][implementation-javascript] (node.js and the browser)
+- [JavaScript][implementation-javascript] (node.js and browsers)
 - [Java][implementation-java] (in progress)
 
 ## Contributing
 
 Oli is a community-driven project.
-The language specification is under active debate and enhancement process. 
-It's open for everyone to discuss, you're welcome!
+The language specification is unclosed and under active enhancement process. 
+It's open for everyone to discuss!
 
 How can I contribute?
 
