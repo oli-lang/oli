@@ -1,4 +1,4 @@
-Oli Language's documentation and reference
+Oli language's specification and reference
 ==========================================
 
 Oli is a minimal declarative language, focused on simplicity, elegancy and with built-in rich features.
