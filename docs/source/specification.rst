@@ -5,15 +5,11 @@ Specification
 Overview
 --------
 
-Stage
-~~~~~
-
-Oli language specficication is under active desinging process
-
 Versioning
 ^^^^^^^^^^
 
-Oli uses the semantic version
+Oli language specification follows the semantic versioning convention and rules to
+versining the document and future specifications
 
 General
 ~~~~~~~
@@ -21,12 +17,17 @@ General
 File extension
 ^^^^^^^^^^^^^^
 
-The proposed file extension is (as abvious): ``oli``
+The proposed file extension is ``oli``
 
 MIME Type
 ^^^^^^^^^
 
-Both MIME types can be used: - application/oli - text/oli
+There are three different MIME types that can be used to represent the Oli language documents:
+
+- text/oli
+- application/oli
+- text/oli-template
+
 
 Character encoding
 ^^^^^^^^^^^^^^^^^^
@@ -312,3 +313,6 @@ You must escape or quote the following values in strings unquoted chains
     yes
     no
     :
+
+
+.. _semver: http://semver.org/

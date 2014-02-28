@@ -1,5 +1,5 @@
-Oli reference and language specification
-========================================
+Introduction
+============
 
 .. _discussion: https://github.com/oli-lang/oli/issues?labels=discussion&page=1&state=open
 
@@ -19,34 +19,53 @@ Rationale
 
 Just for fun :)
 
-Features
---------
-
--  First class primitive types: boolean, number and strings
--  List and data hashmaps support
--  Data references (formally variables)
--  Copy or extend data structures and values
--  Templaiting with string interpolation support
-
-Upcoming Features
------------------
-
-Please, take a look to the Github discussion_ for more details
-
-Design Goals
+Design goals
 ------------
 
 - Human focused, readability matters
 - Keep it simple but provide built-in rich features
 - Realiable syntax, avoid ambiguity
-- Unobstructive grammar-free syntax
+- Unobstructive grammar syntax symbol based
 - Elegant mix of basic programming languages features
 
-Oli is useful for
------------------
+Use case proposals
+------------------
 
 - Create syntax clean and readable configuration files
 - Use it as your own DSL for specific purposes
 - Store human writable/readable data, like manifest files
 - Data interchange format for non-complex schemas structures
 - Featured markup-like language for templating
+
+Features
+--------
+
+At high level, here are some of the most relevant language features
+
+- First class primitive types: boolean, number and strings
+- List and data hashmaps support
+- Data references (formally variables)
+- Copy or extend data structures and values
+- Templaiting with string interpolation support
+
+Upcoming features
+-----------------
+
+There are some relevant features for the future 0.2 language version specification
+
+- Indent-based blocks (#5_)
+- Block scope references (#18_)
+- Interpolated code (#3_)
+- Built-in functions for data transformation and formatting (#21_)
+- Math operations (#20_)
+- Date as first-class type (#2_)
+
+.. _5: https://github.com/oli-lang/oli/issues/5
+.. _21: https://github.com/oli-lang/oli/issues/21
+.. _18: https://github.com/oli-lang/oli/issues/18
+.. _18: https://github.com/oli-lang/oli/issues/18
+.. _20: https://github.com/oli-lang/oli/issues/20
+.. _3: https://github.com/oli-lang/oli/issues/3
+.. _2: https://github.com/oli-lang/oli/issues/2
+
+For a detailed, take a look to the Github discussion_ for more details
