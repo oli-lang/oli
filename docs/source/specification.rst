@@ -5,11 +5,20 @@ Specification
 Overview
 --------
 
+Introduction
+~~~~~~~~~~~~
+
+This document aims to be a complete and detailed language references to provide a 
+
 Versioning
 ^^^^^^^^^^
 
 Oli language specification follows the semantic versioning convention and rules to
 versining the document and future specifications
+
+- Minor specification changes and text fixes will be a new patch version
+- Any syntax new feature addon o removement implies a minor new version
+- Any
 
 General
 ~~~~~~~

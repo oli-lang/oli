@@ -28,14 +28,15 @@ Design goals
 - Unobstructive grammar syntax symbol based
 - Elegant mix of basic programming languages features
 
-Use case proposals
-------------------
+Real use cases
+--------------
 
 - Create syntax clean and readable configuration files
 - Use it as your own DSL for specific purposes
 - Store human writable/readable data, like manifest files
 - Data interchange format for non-complex schemas structures
 - Featured markup-like language for templating
+- Replacement for XML, JSON, YAML, INI...
 
 Features
 --------
@@ -53,7 +54,7 @@ Upcoming features
 
 There are some relevant features for the future 0.2 language version specification
 
-- Indent-based blocks (#5_)
+- Indent-based blocks (#`5`_)
 - Block scope references (#18_)
 - Interpolated code (#3_)
 - Built-in functions for data transformation and formatting (#21_)
