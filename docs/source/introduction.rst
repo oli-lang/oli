@@ -54,8 +54,8 @@ Upcoming features
 
 There are some relevant features for the future 0.2 language version specification
 
-- Indent-based blocks (#`5`_)
-- Block scope references (#18_)
+- Indent-based blocks (# `5`_)
+- Block scope references (# `18`_)
 - Interpolated code (#3_)
 - Built-in functions for data transformation and formatting (#21_)
 - Math operations (#20_)
