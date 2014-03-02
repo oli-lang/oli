@@ -2,11 +2,8 @@
 Specification
 =============
 
-Overview
---------
-
 Introduction
-~~~~~~~~~~~~
+------------
 
 This is the initial `Oli language`_ draft reference and specification documentation.
 It aims to cover all the technical details of the language in order to be useful 
