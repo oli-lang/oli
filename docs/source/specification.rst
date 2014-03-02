@@ -206,8 +206,8 @@ An unquoted literal expression can have any type of character except the followi
       ;
 
 **Exception**: 
-unquoted strings defined inside a list or block attributes adds the ``,`` token as reserved, 
-as it's used in these syntax context to define the statement terminator token
+unquoted strings defined inside a lists or block attributes must add the ``,`` token as reserved, 
+as it's used in these context as statement terminator token helper
 
 Escape sequence
 '''''''''''''''
@@ -297,9 +297,7 @@ The ``block`` is considered a mutable data type
 Operators
 ---------
 
-Oli introduces common set of built-in operators for basic document data operations
-
-Unary operators
+Unary Operators
 ^^^^^^^^^^^^^^^
 
 Anchor
@@ -360,8 +358,8 @@ The relational not operator is used in conjunction with the assignment operator 
 
 The use of this operator is under discussion. 
 
-Binary operators
-~~~~~~~~~~~~~~~~
+Binary Operators
+^^^^^^^^^^^^^^^^
 
 Assignment
 ''''''''''
@@ -369,6 +367,15 @@ Assignment
 ``:``
 
 The assignment operator is used as block assignment to define block elements
+
+Equal
+'''''
+
+``=``
+
+The equal operator is used as compilation hidden block assignment
+
+In the future Oli versions, this operator will be probably overloaded
 
 Relational
 ''''''''''
@@ -379,13 +386,6 @@ The relational operator is used in block identifier expressions to express a sho
 way to define a block alias that has compilation output effect
 
 In the future Oli versions, this operator will be probably overloaded
-
-Comma
-'''''
-
-``,``
-
-Used as statement terminator helper token inside lists or block attribute expressions
 
 Relational Raw
 '''''''''''''
@@ -424,6 +424,23 @@ Merge
 The merge operator is used in block identifier expressions to define the origin block that
 should merge from
 
+Tokens
+------
+
+End
+'''
+
+``end``
+
+The end token is used as block statement terminator token. It's a reserved keyword
+
+Comma
+'''''
+
+``,``
+
+Used as statement terminator helper token inside lists or block attribute expressions
+
 Expressions
 -----------
 
@@ -440,47 +457,81 @@ In-line comments are expressed with a ``#`` as stament initializer and the termi
 Block comments starts and end with ``##``.
 Both comments contents must allow any type of characte, expect ``#`` 
 
+.. code-block:: ruby
 
-Identifiers
-~~~~~~~~~~~
+    comment:
+      (blockComment | inlineComment)
+      ;
+    inlineComment:
+      "#" (character)* NEWLINE
+      ;
+    blockComment:
+      "##" (character | NEWLINE (~("##")))* "##"
+      ;
 
-Literal Identifier
-^^^^^^^^^^^^^^^^^^
 
-String Identifier
-^^^^^^^^^^^^^^^^^
+Identifier
+~~~~~~~~~~
 
-String interpolation
-^^^^^^^^^^
+Identifier are expressions which defines a name value that will be processed internally by the compiler for multiple purposes.
+It is use in blocks to define its idenfitier key, in binary expressions or as reference consumition expression.
 
-String interpolation ``@{`` and ``}``
+.. code-block:: ruby
 
-Expressions
-^^^^^^^^^^^
+    identifier:
+        identifierName
+      | '"' character* '"'
+      | "'" character* "'"
+      ;
+    identifierName:
+      (character | NEWLINE ~(keywords | ":" | NEWLINE | comment | "end" | "[" | "]" | "}" | "{" ))*
+      ;
+
+*Pending a better deep explanation about identifier expressions use contexts*
+
+String Interpolation
+^^^^^^^^^^^^^^^^^^^^
+
+String interpolation allows to use references inside string literal chains.
+It must be preceded by the ``*`` token
+
+.. code-block:: ruby
+
+    reference:
+        "*" identifierName
+      | "*" '"' character* '"'
+      | "*" "'" character* "'"
+      ;
+
+Statements
+----------
 
 Value Statement
 '''''''''''''''
 
 .. code-block:: ruby
 
-    ValueStatement =
-      ValueIdentifier [ MetaIdentifier ] : ( PrimitiveType | ListStatement ) ... EndOfLine
+    valueStatement:
+      identifierExpression assignOperators elements (NEWLINE | endToken)
+      ;
+
+Variable Statement
+''''''''''''''''''
+
+.. code-block:: ruby
+
+    valueStatement:
+      identifierExpression "=" elements (NEWLINE | endToken)
+      ;
 
 Block Statement
 '''''''''''''''
 
 .. code-block:: ruby
 
-    BlockStatement =
-      BlockIdentifier [ MetaIdentifier ] :
-        ( BlockStatement | ListStatement | PrimitiveType ) ...
-      EndToken
-
-ListStatement
-'''''''''''''
-
-MetaIdentifier
-''''''''''''''
+    blockStatement:
+      identifierExpression assignOperator elements (NEWLINE | endToken)
+      ;
 
 Grammar
 -------
@@ -488,7 +539,8 @@ Grammar
 Reserved Keywords
 ^^^^^^^^^^^^^^^^^
 
-The following keywords cannot be used as identifiers
+The following keywords cannot be used as identifiers.
+Them must be escaped in order to use it inside identifier or unquoted literals expressions
 
 :: code-block:: ruby
 
@@ -501,7 +553,7 @@ The following keywords cannot be used as identifiers
     :
     
 
-Grammar Ambiguities 
+Grammar Ambiguities
 ^^^^^^^^^^^^^^^^^^^
 
 This section is still a work in progress

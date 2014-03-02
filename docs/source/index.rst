@@ -28,7 +28,7 @@ Table of Contents
 -----------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
   
    overview
    specification
