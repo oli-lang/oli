@@ -72,12 +72,14 @@ type of primitive value or block (a set of values)
 Scopes
 ^^^^^^
 
-Any new document must create it's own referenciable scope context
+Any new document must create it's own referenciable scope context.
 Oli data references shares the same scope context per document
 
 Just for clarification, if you need to process multiple documents 
 across diferent files, you must merge them before pass
 it to the Oli compiler
+
+It's under discussion to introduce support for block scopes contexts in the next Oli version
 
 Mutability
 ^^^^^^^^^^
