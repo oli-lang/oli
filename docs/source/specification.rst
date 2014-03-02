@@ -445,7 +445,7 @@ Expressions
 -----------
 
 Comments
-~~~~~~~~
+^^^^^^^^
 
 Comments expressions can be defined in any part of the document, including 
 as interpolated expressions inside another expressions.
@@ -471,7 +471,7 @@ Both comments contents must allow any type of characte, expect ``#``
 
 
 Identifier
-~~~~~~~~~~
+^^^^^^^^^^
 
 Identifier are expressions which defines a name value that will be processed internally by the compiler for multiple purposes.
 It is use in blocks to define its idenfitier key, in binary expressions or as reference consumition expression.
@@ -507,7 +507,7 @@ Statements
 ----------
 
 Value Statement
-'''''''''''''''
+^^^^^^^^^^^^^^^
 
 .. code-block:: ruby
 
@@ -516,7 +516,7 @@ Value Statement
       ;
 
 Variable Statement
-''''''''''''''''''
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: ruby
 
@@ -525,7 +525,7 @@ Variable Statement
       ;
 
 Block Statement
-'''''''''''''''
+^^^^^^^^^^^^^^^
 
 .. code-block:: ruby
 
