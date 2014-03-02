@@ -243,9 +243,7 @@ List can have elements.
 Elements can be any type of value, that means a boolean, number, string, block or another list, 
 so it can be a multidimensional list
 
-The ``list``
-
- is considered a mutable data type, as it can be modified via the block extend or merge operators
+The ``list`` is considered a mutable data type, as it can be modified via the block extend or merge operators
 In a future versions is planned to provide native operators to mutate, iterate and transform
 lists, just for a better aproach
 
