@@ -54,7 +54,7 @@ Basics Concepts
 ---------------
 
 Document
-~~~~~~~~
+^^^^^^^^
 
 Any portion of code that is passed to the Oli processor or compiler,
 usually as stream of data readed from file in disk, is considered a document
@@ -62,7 +62,7 @@ usually as stream of data readed from file in disk, is considered a document
 Document is a set of supported syntax valid statements
 
 Linked Data
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 Oli language must provide built-in support for linking and data consumition (formally variables)
 
@@ -70,7 +70,7 @@ Any type of value in the document can be referenciable, that means any
 type of primitive value or block (a set of values)
 
 Scopes
-~~~~~~
+^^^^^^
 
 Any new document must create it's own referenciable scope context
 Oli data references shares the same scope context per document
@@ -79,8 +79,8 @@ Just for clarification, if you need to process multiple documents
 across diferent files, you must merge them before pass
 it to the Oli compiler
 
-Mutation
-~~~~~~~~
+Mutability
+^^^^^^^^^^
 
 Data values mutation must not supported except in blocks and lists data types
 
