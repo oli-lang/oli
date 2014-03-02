@@ -10,8 +10,8 @@ for implementation and for language features consulting
 
 Stage
 -----
-This documentation is still unfinished as the first language version features
-are unclosed and under open debate process.
+This documentation is a work in progress, and should be considered unfinished 
+as the first language version features are still unclosed and under open debating process.
 Anyone can join_ to the discussion and help improving Oli
 
 .. _Oli language: http://oli-lang.org/

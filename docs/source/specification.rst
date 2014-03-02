@@ -8,7 +8,9 @@ Overview
 Introduction
 ~~~~~~~~~~~~
 
-This document aims to be a complete and detailed language references to provide a 
+This is the initial `Oli language`_ draft reference and specification documentation.
+It aims to cover all the technical details of the language in order to be useful 
+for implementation and for language features consulting
 
 Versioning
 ^^^^^^^^^^
