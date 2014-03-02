@@ -82,7 +82,7 @@ it to the Oli compiler
 Mutability
 ^^^^^^^^^^
 
-Data values mutation must not supported except in blocks and lists data types
+Data mutability must not be implemented by norm except in ``blocks`` and ``lists`` data types
 
 For example, you could create a reference that points to a number, 
 then it can be overwriten with another number, 
