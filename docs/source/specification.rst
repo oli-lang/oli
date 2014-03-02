@@ -542,7 +542,7 @@ Reserved Keywords
 The following keywords cannot be used as identifiers.
 Them must be escaped in order to use it inside identifier or unquoted literals expressions
 
-:: code-block:: ruby
+.. code-block:: ruby
 
     end
     nil
