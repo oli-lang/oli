@@ -45,8 +45,8 @@ At high level, here are some of the most relevant language features
 
 - First class primitive types: boolean, number and strings
 - List and data hashmaps support
-- Data references (formally variables)
-- Copy or extend data structures and values
+- Data linking and references
+- Copy or extend data structures
 - Templaiting with string interpolation support
 
 Upcoming features
@@ -54,11 +54,11 @@ Upcoming features
 
 There are some relevant features for the future 0.2 language version specification
 
-- Indent-based blocks (# `5`_)
-- Block scope references (# `18`_)
-- Interpolated code (#3_)
-- Built-in functions for data transformation and formatting (#21_)
-- Math operations (#20_)
+- Indent-based blocks (#`5`_)
+- Block scope references (#`18_)
+- Interpolated code (#`3`_)
+- Built-in functions for data transformation and formatting (#`21`_)
+- Math operations (#`20`_)
 - Date as first-class type (#2_)
 
 .. _5: https://github.com/oli-lang/oli/issues/5

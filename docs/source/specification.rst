@@ -20,9 +20,6 @@ versining the document and future specifications
 - Any syntax new feature addon o removement implies a minor new version
 - Any
 
-General
-~~~~~~~
-
 File extension
 ^^^^^^^^^^^^^^
 
@@ -41,13 +38,14 @@ There are three different MIME types that can be used to represent the Oli langu
 Character encoding
 ^^^^^^^^^^^^^^^^^^
 
-Oli only must support UTF-8 character encoding
+Oli processor must support the UTF-16 and UTF-8 character encodings
 
-You can use Unicode characters, but they must be defined using the
-escaped unicode entity value
+On output it is recommended that a byte order mark should only be emitted for UTF-16 character encodings.
+There is not plan to support UTF-32 encoding
 
-Lexical Conventions
--------------------
+Basics Concepts
+---------------
+
 
 Whites Space
 ~~~~~~~~~~~~
@@ -95,44 +93,72 @@ String Identifier
 ^^^^^^^^^^^^^^^^^
 
 Types
+-----
+
+Oli implementation must provide built-in support for the following types
+
+Boolean
+~~~~~~~
+
+The boolean type references to the following privimitive literal values. 
+
+``
+booleanLiteral:
+  | true
+  | false
+  | yes
+  | no
+  ;
+``
+
+The `yes` and `no` are semantic alias to `true` and `false` respectively
+
+Number
+~~~~~~
+
+String
+~~~~~~
+
+Nil
+~~~
+
+List
+~~~~
+
+Block
 ~~~~~
 
-Operators
-~~~~~~~~~
 
-Oli introduces common set of built-in operators that can be really
-useful
+Operators
+---------
+
+Oli introduces common set of built-in operators for basic document data operations
 
 Unary operators
 ^^^^^^^^^^^^^^^
 
-Postfix Increment
-'''''''''''''''''
+Anchor
+''''''
 
-``++``
+``&``
+Is used to create a link references to some value in the document
 
-Postfix Decrement
-'''''''''''''''''
-
-``--``
-
-Void
-''''
-
-``void``
+Reference
 
 Logical NOT
 '''''''''''
 
 ``!``
 
+Pipe
+''''
+
+``|``
+Used to create custom blocks
+
+
 Binary operators
 ~~~~~~~~~~~~~~~~
-
-Multiplicate
-''''''''''''
-
-``*``
 
 Divisor
 '''''''
@@ -189,15 +215,12 @@ Comma
 
 ``,``
 
-Identifier Assignment
-'''''''''''''''''''''
+Used as statement terminator token inside lists or block attributes
+
+Relational
+''''''''''
 
 ``>``
-
-Reference
-'''''''''
-
-``&``
 
 Extend
 ''''''
@@ -209,21 +232,13 @@ Merge
 
 ``>>>``
 
-Clone
+Assign
 '''''
 
-``=>``
+````
 
-Operator Precedence
-^^^^^^^^^^^^^^^^^^^
-
-Template
-''''''''
-
-``@``
-
-Statements
-~~~~~~~~~~
+Syntax
+~~~~~~
 
 Examples are defined based on context-free grammar EBNF-like sintaxis
 
