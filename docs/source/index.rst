@@ -8,10 +8,11 @@ This is the initial `Oli language`_ draft reference and specification documentat
 It aims to cover all the technical details of the language in order to be useful 
 for implementation and for language features consulting
 
-Stage
------
-This documentation is a work in progress, and should be considered unfinished 
-as the first language version features are still unclosed and under open debating process.
+Document stage
+--------------
+
+This documentation is a **work in progress** and should be considered unfinished 
+as the language features are still unclosed and under open debating process.
 Anyone can join_ to the discussion and help improving Oli
 
 .. _Oli language: http://oli-lang.org/
@@ -27,4 +28,3 @@ Table of Contents
    basics
    reference
    specification
-

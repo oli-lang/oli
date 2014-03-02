@@ -55,11 +55,11 @@ Upcoming features
 There are some relevant features for the future 0.2 language version specification
 
 - Indent-based blocks (#`5`_)
-- Block scope references (#`18_)
+- Block scope references (#`18`_)
 - Interpolated code (#`3`_)
 - Built-in functions for data transformation and formatting (#`21`_)
 - Math operations (#`20`_)
-- Date as first-class type (#2_)
+- Date as first-class type (#`2`_)
 
 .. _5: https://github.com/oli-lang/oli/issues/5
 .. _21: https://github.com/oli-lang/oli/issues/21
