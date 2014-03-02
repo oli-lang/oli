@@ -8,8 +8,16 @@ This is the initial `Oli language`_ draft reference and specification documentat
 It aims to cover all the technical details of the language in order to be useful 
 for implementation and for language features consulting
 
+Project stage
+~~~~~~~~~~~~~
+
+Oli project is still in a precarious beta public preview version 
+and it's work in progress project.
+
+Please, consider this before take this as a serious stuff
+
 Document stage
---------------
+~~~~~~~~~~~~~~
 
 This documentation is a **work in progress** and should be considered unfinished 
 as the language features are still unclosed and under open debating process.

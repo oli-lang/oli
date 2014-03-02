@@ -52,7 +52,6 @@ Character encoding
 Oli processor must support the UTF-16 and UTF-8 character encodings
 
 On output it is recommended that a byte order mark should only be emitted for UTF-16 character encodings.
-There is no plan to support UTF-32 encoding
 
 Basics Concepts
 ---------------
@@ -101,7 +100,7 @@ Lists can be also modified via the extend or merge block operators
 In future language version, the ``list`` type would have native operators 
 to provide mutation, iteration and manipulation
 
-*This language feature is under discussion and needs more clarification*
+*This feature is under discussion and needs more clarification*
 
 Types
 -----
@@ -209,22 +208,22 @@ An unquoted literal expression can have any type of character except the followi
       (characters (~( ":" | NEWLINE | comment | "end" | "[" | "]" | "}" | "{" )))*
       ;
 
+**Exception**: 
+unquoted strings defined inside a list or block attributes adds the ``,`` token as reserved, 
+as it's used in these syntax context to define the statement terminator token
+
 Escape sequence
 '''''''''''''''
 
 Strings support escape sequences for special characters.
 The escapes must are:
 
-- \n for newline, equivalent to \x0A
-- \r for carriage return, equivalent to \x0D
-- \f for form feed, equivalent to \x0C
-- \b for backspace, equivalent to \x08
-- \t for tab, equivalent to \x09
-- \v for vertical tab, equivalent to \x0B
-
-**Notes**
-
-The unique
+- `\n` for newline, equivalent to \x0A
+- `\r` for carriage return, equivalent to \x0D
+- `\f` for form feed, equivalent to \x0C
+- `\b` for backspace, equivalent to \x08
+- `\t` for tab, equivalent to \x09
+- `\v` for vertical tab, equivalent to \x0B
 
 Nil
 ~~~
@@ -283,7 +282,9 @@ Block
 
 A block (formally map or associate array) denotes a key-value map of elements
 
-Blocks are the most common type of the language and it's used to build the data schema tree
+Blocks the main and most common data type of the language. 
+It's used to build the schema tree and structure the document
+
 A block expression consists of zero or more entries. 
 Each entry has a key and a value. Each key and each value is denoted by an expression.
 Values can be any type of data, that means a boolean, number, string, list or another block
@@ -309,105 +310,126 @@ Unary operators
 Anchor
 ''''''
 
-``&``
-Is used to create a link references to some value in the document
+``&`` 
+
+Anchor operator is used to create a link references in the document.
+It is defined as a part of a block identifier expression with a string literal
 
 Reference
+'''''''''
 
-Logical NOT
+``*`` 
+
+Reference operator is used to consum references in the document.
+It must be a part of a string literal that defines the reference identifier
+
+Logical not
 '''''''''''
 
 ``!``
+
+The relational not operator is used in conjunction with the assignment operator to define empty blocks
+
+The use contexts of this operator is under discussion. 
+In the future Oli versions, this operator will be probably overloaded
 
 Pipe
 ''''
 
 ``|``
-Used to create custom blocks
 
+The pipe operator is used to define in-line elements in block statements.
+Currently, the purpose of this operator is only to be a recurrent helper when 
+defining nested block elements without requiring to use the `end` terminator 
+token to express the end of the block
+
+In future versions, this operator will be probably deprecated, due to 
+indentation-based blocks will make unnecesary to use it
+
+Dash
+''''
+
+``-`` 
+
+The dash operator is used to define list in a shortcut way.
+It is also used in conjunction with the assignment operator to define raw folded blocks
+
+In the future Oli versions, this operator will be probably overloaded
 
 Binary operators
 ~~~~~~~~~~~~~~~~
-
-Divisor
-'''''''
-
-``/``
-
-Addition
-''''''''
-
-``+``
-
-Subtraction
-'''''''''''
-
-``-``
-
-Less-than
-'''''''''
-
-``<``
-
-Greater than
-''''''''''''
-
-``>``
-
-Less-than-or-equal
-''''''''''''''''''
-
-``<=``
-
-Greater-than-or-equal
-'''''''''''''''''''''
-
-``>=``
-
-Equals
-''''''
-
-``==``
-
-Does-not-equals
-'''''''''''''''
-
-``!=``
 
 Assignment
 ''''''''''
 
 ``:``
 
+Relational
+''''''''''
+
+``>``
+
+The relational operator is 
+
 Comma
 '''''
 
 ``,``
 
-Used as statement terminator token inside lists or block attributes
+Used as statement terminator helper token inside lists or block attribute expressions
 
-Relational
-''''''''''
+Relational Raw
+'''''''''''''
 
-``>``
+``:>``
+
+Assignment Fold
+'''''''''''''''
+
+``:-``
+
+The assignment fold operator is used in block statements to define a folded block of string literals
+
+Assignment Unfold
+'''''''''''''''''
+
+``:=``
+
+The assignment unfold operator is used in block statements to define a unfolded block of string literals
 
 Extend
 ''''''
 
 ``>>``
 
+The extend operator is used in block identifier expressions to define a block
+
 Merge
 '''''
 
 ``>>>``
 
-Assign
-'''''
 
-````
+Syntax
+------
+
+Reserved Keywords
+~~~~~~~~~~~~~~~~~
+
+You must escape or quote the following values in strings unquoted chains
+
+::
+
+    end
+    true
+    false
+    yes
+    no
+    :
+
 
 Lexic
------
+~~~~~
 
 Whites Space
 ~~~~~~~~~~~~
@@ -423,18 +445,8 @@ Comments
 
 Comments 
 
-Keywords
-~~~~~~~~
-
-Reserved Words
-~~~~~~~~~~~~~~
-
-Punctuators
-~~~~~~~~~~~
-
 Expressions
 -----------
-
 
 Identifiers
 ~~~~~~~~~~~
@@ -445,12 +457,7 @@ Literal Identifier
 String Identifier
 ^^^^^^^^^^^^^^^^^
 
-Syntax
-~~~~~~
-
-Examples are defined based on context-free grammar EBNF-like sintaxis
-
-Templating
+String interpolation
 ^^^^^^^^^^
 
 String interpolation ``@{`` and ``}``
@@ -482,70 +489,13 @@ ListStatement
 MetaIdentifier
 ''''''''''''''
 
-Primitive Types
-~~~~~~~~~~~~~~~
+Grammar Ambiguities 
+-------------------
 
-Boolean
-^^^^^^^
+This section is still a work in progress
 
-.. code-block:: ruby
-
-    true
-    false
-    yes
-    no
-
-String
-^^^^^^
-
-Strings can be defined without quotes, but this is not applicable to all
-cases.
-
-Strings which contain one of the following characters must be quoted or
-escaped:
-
-.. code-block:: ruby
-
-    : , ' " #
-
-.. code-block:: ruby
-
-    whitespaces
-    [a-zA-Z0-9]
-    [-|_|.|`|^|=|?|¿|¡|!|@|$|%|&|/|(|)|*]
-
-Of course, it's supported to define strings with quotes
-
-.. code:: javascript
-
-    'this is a single-quoted string'
-    "and this one is double-quoted"
-    and finally this one without quotes
-
-Number
-^^^^^^
-
-Numbers can be ``integer`` or ``float``
-
-::
-
-    123
-    12.5342
-
-Reserved Keywords
-~~~~~~~~~~~~~~~~~
-
-You must escape or quote the following values in strings unquoted chains
-
-::
-
-    end
-    true
-    false
-    yes
-    no
-    :
-
+Detected grammar or syntax ambiguities will be detailed here as useful considerations 
+to the developers or end user
 
 .. _semver: http://semver.org/
 .. _Oli language: http://oli-lang.org/
