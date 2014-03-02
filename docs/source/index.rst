@@ -11,10 +11,8 @@ for implementation and for language features consulting
 Project stage
 ~~~~~~~~~~~~~
 
-Oli project is still in a precarious beta public preview version 
-and it's work in progress project.
-
-Please, consider this before take this as a serious stuff
+Oli is still a work in progress precarious beta project.
+Please, consider this before take it as a serious stuff
 
 Document stage
 ~~~~~~~~~~~~~~
@@ -30,7 +28,7 @@ Table of Contents
 -----------------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 3
   
    overview
    specification

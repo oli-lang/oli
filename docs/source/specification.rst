@@ -82,7 +82,7 @@ it to the Oli compiler
 Mutability
 ^^^^^^^^^^
 
-Data mutability must not be implemented by norm except in ``blocks`` and ``lists`` data types
+Data mutability must not be implemented by norm except in ``blocks`` and ``lists` data types
 
 For example, you could create a reference that points to a number, 
 then it can be overwriten with another number, 
@@ -318,7 +318,7 @@ Reference
 Reference operator is used to consum references in the document.
 It must be a part of a string literal that defines the reference identifier
 
-Logical not
+Logical Not
 '''''''''''
 
 ``!``
@@ -351,6 +351,15 @@ It is also used in conjunction with the assignment operator to define raw folded
 
 In the future Oli versions, this operator will be probably overloaded
 
+Assignment Not
+''''''''''''''
+
+``!:``
+
+The relational not operator is used in conjunction with the assignment operator to define empty blocks
+
+The use of this operator is under discussion. 
+
 Binary operators
 ~~~~~~~~~~~~~~~~
 
@@ -359,12 +368,17 @@ Assignment
 
 ``:``
 
+The assignment operator is used as block assignment to define block elements
+
 Relational
 ''''''''''
 
 ``>``
 
-The relational operator is 
+The relational operator is used in block identifier expressions to express a short and elegant
+way to define a block alias that has compilation output effect
+
+In the future Oli versions, this operator will be probably overloaded
 
 Comma
 '''''
@@ -377,6 +391,8 @@ Relational Raw
 '''''''''''''
 
 ``:>``
+
+The relational raw operator is used as block assignment to define a raw block of literals
 
 Assignment Fold
 '''''''''''''''
@@ -397,51 +413,33 @@ Extend
 
 ``>>``
 
-The extend operator is used in block identifier expressions to define a block
+The extend operator is used in block identifier expressions to define the origin block
+that should extend from
 
 Merge
 '''''
 
 ``>>>``
 
+The merge operator is used in block identifier expressions to define the origin block that
+should merge from
 
-Syntax
-------
-
-Reserved Keywords
-~~~~~~~~~~~~~~~~~
-
-You must escape or quote the following values in strings unquoted chains
-
-::
-
-    end
-    true
-    false
-    yes
-    no
-    :
-
-
-Lexic
-~~~~~
-
-Whites Space
-~~~~~~~~~~~~
-
-Line Terminators
-~~~~~~~~~~~~~~~~
-
-::
-    
+Expressions
+-----------
 
 Comments
 ~~~~~~~~
 
-Comments 
+Comments expressions can be defined in any part of the document, including 
+as interpolated expressions inside another expressions.
+Comments must be ignored from the compiler and optionally by the parser implementation.
+Comments must have no result in the compilation output
 
-Expressions
------------
+The comment token is ``#``. There are two types allowed comment expressions, in-line or block comments.
+In-line comments are expressed with a ``#`` as stament initializer and the terminator token must be end of line.
+Block comments starts and end with ``##``.
+Both comments contents must allow any type of characte, expect ``#`` 
+
 
 Identifiers
 ~~~~~~~~~~~
@@ -484,8 +482,27 @@ ListStatement
 MetaIdentifier
 ''''''''''''''
 
+Grammar
+-------
+
+Reserved Keywords
+^^^^^^^^^^^^^^^^^
+
+The following keywords cannot be used as identifiers
+
+:: code-block:: ruby
+
+    end
+    nil
+    true
+    false
+    yes
+    no
+    :
+    
+
 Grammar Ambiguities 
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 This section is still a work in progress
 
