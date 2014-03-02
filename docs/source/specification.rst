@@ -18,7 +18,7 @@ Versioning
 This specification follows the semantic versioning convention to
 as versioning policy.
 
-Just to clarification, related to this document, will be applied as follows
+Just for clarification, related to this document, will be applied as follows
 
 - Minor specification changes and text fixes will be a patch version
 - Syntax new feature addon o removement or language logical feature is a minor new version
