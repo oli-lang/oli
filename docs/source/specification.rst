@@ -105,7 +105,7 @@ Types
 Oli implementation must provide built-in support for the following types
 
 Boolean
-~~~~~~~
+^^^^^^^
 
 The boolean type references to the following privimitive literal values. 
 
@@ -123,7 +123,7 @@ The `yes` and `no` are semantic alias to `true` and `false` respectively
 Boolean literal values are considered reserved keywords
 
 Number
-~~~~~~
+^^^^^^
 
 A number literal is either a decimal or hexadecimal integer of arbitrary size or a decimal double
 
@@ -160,7 +160,7 @@ Implementations with this limitation could consider a solution and provide
 a hackable but consistent way to support it
 
 String
-~~~~~~
+^^^^^^
 
 A string is a sequence of valid UTF-8 code units.
 Oli supports two types of string expressions, quoted and unquoted literal
@@ -223,7 +223,7 @@ The escapes must are:
 - `\\v` for vertical tab, equivalent to \x0B
 
 Nil
-~~~
+^^^
 
 A reserved word that reprensent a non-existent or empty value.
 At programming language level usually is represented by the ``null`` or ``void` primitives types
@@ -235,7 +235,7 @@ At programming language level usually is represented by the ``null`` or ``void` 
       ;
 
 List
-~~~~
+^^^^
 
 A list (formally array) type denotes a list of values, which is an integer indexed collection (in future versions)
 
@@ -273,7 +273,7 @@ a way to define lists is using the double dash operator (``--``)
 *Is pending a more detailed specification and examples*
 
 Block
-~~~~~
+^^^^^
 
 A block (formally map or associate array) denotes a key-value map of elements
 
@@ -428,14 +428,14 @@ Tokens
 ------
 
 End
-'''
+^^^
 
 ``end``
 
 The end token is used as block statement terminator token. It's a reserved keyword
 
 Comma
-'''''
+^^^^^
 
 ``,``
 
