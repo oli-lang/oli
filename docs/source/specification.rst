@@ -342,3 +342,5 @@ You must escape or quote the following values in strings unquoted chains
 
 
 .. _semver: http://semver.org/
+.. _Oli language: http://oli-lang.org/
+.. _join: https://github.com/oli-lang/oli/issues?labels=discussion&page=1&state=open
