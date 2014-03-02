@@ -215,12 +215,12 @@ Escape sequence
 Strings support escape sequences for special characters.
 The escapes must are:
 
-- `\n` for newline, equivalent to \x0A
-- `\r` for carriage return, equivalent to \x0D
-- `\f` for form feed, equivalent to \x0C
-- `\b` for backspace, equivalent to \x08
-- `\t` for tab, equivalent to \x09
-- `\v` for vertical tab, equivalent to \x0B
+- `\\n` for newline, equivalent to \x0A
+- `\\r` for carriage return, equivalent to \x0D
+- `\\f` for form feed, equivalent to \x0C
+- `\\b` for backspace, equivalent to \x08
+- `\\t` for tab, equivalent to \x09
+- `\\v` for vertical tab, equivalent to \x0B
 
 Nil
 ~~~
