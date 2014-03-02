@@ -113,7 +113,8 @@ Boolean
 
 The boolean type references to the following privimitive literal values. 
 
-::
+.. code-block:: ruby
+
     booleanLiteral:
       | true
       | false
@@ -130,7 +131,8 @@ Number
 
 A number literal is either a decimal or hexadecimal integer of arbitrary size or a decimal double
 
-::
+.. code-block:: ruby
+
     numberLiteral:
          NUMBER
        | HEX_NUMBER
@@ -167,7 +169,8 @@ String
 A string is a sequence of valid UTF-8 code units.
 Oli supports two types of string expressions, quoted and unquoted literal
 
-::
+.. code-block:: ruby
+
     stringLiteral:
       (unquotedString | multilineString | singleLineString)+
       ;
@@ -179,7 +182,8 @@ A quoted string literal is a sequence of characters wrapper with double or singl
 A string can be either a single line string or a multiline string 
 and must allow escape sequence characters
 
-::
+.. code-block:: ruby
+
     singleLineString:
         '"' characters* '"'
       | "'" characters* "'"
@@ -199,7 +203,8 @@ An unquoted literal expression can have any type of character except the followi
 
 ``":" | NEWLINE | comment | "end" | "[" | "]" | "}" | "{"``
 
-::
+.. code-block:: ruby
+
     unquotedLiteral:
       (characters (~( ":" | NEWLINE | comment | "end" | "[" | "]" | "}" | "{" )))*
       ;
@@ -227,7 +232,8 @@ Nil
 A reserved word that reprensent a non-existent or empty value.
 At programming language level usually is represented by the ``null`` or ``void` primitives types
 
-::
+.. code-block:: ruby
+
     nilLiteral:
       nil
       ;
@@ -249,7 +255,8 @@ lists, just for a better aproach
 
 There are multiple valid expressions to create lists, brackets-based and dash-bash
 
-::
+.. code-block:: ruby
+
     listExpression:
       (listBracketsExpression | listDashExpression)
       ;
@@ -263,7 +270,8 @@ There are multiple valid expressions to create lists, brackets-based and dash-ba
 Aditionaly, in order to provide a clean way to create first level document lists, 
 a way to define lists is using the double dash operator (``--``)
 
-::
+.. code-block:: ruby
+
     listDoubleDashExpression:
       '--' (element ','?)* INPUTEND
       ;
@@ -282,7 +290,8 @@ Values can be any type of data, that means a boolean, number, string, list or an
 
 The ``block`` is considered a mutable data type
 
-::
+.. code-block:: ruby
+
     blockExpression:
       blockIdentifierExpression assignOperator ((blockElement)*)?
       ;
@@ -452,7 +461,7 @@ Expressions
 Value Statement
 '''''''''''''''
 
-::
+.. code-block:: ruby
 
     ValueStatement =
       ValueIdentifier [ MetaIdentifier ] : ( PrimitiveType | ListStatement ) ... EndOfLine
@@ -460,7 +469,7 @@ Value Statement
 Block Statement
 '''''''''''''''
 
-::
+.. code-block:: ruby
 
     BlockStatement =
       BlockIdentifier [ MetaIdentifier ] :
@@ -479,7 +488,7 @@ Primitive Types
 Boolean
 ^^^^^^^
 
-.. code:: coffeescript
+.. code-block:: ruby
 
     true
     false
@@ -495,11 +504,11 @@ cases.
 Strings which contain one of the following characters must be quoted or
 escaped:
 
-::
+.. code-block:: ruby
 
     : , ' " #
 
-::
+.. code-block:: ruby
 
     whitespaces
     [a-zA-Z0-9]
