@@ -522,7 +522,7 @@ Variable Statement
 
 .. code-block:: ruby
 
-    valueStatement:
+    variableStatement:
       identifierExpression "=" elements (NEWLINE | endToken)
       ;
 
