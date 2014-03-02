@@ -15,12 +15,14 @@ for implementation and for language features consulting
 Versioning
 ^^^^^^^^^^
 
-Oli language specification follows the semantic versioning convention and rules to
-versining the document and future specifications
+This specification follows the semantic versioning convention to
+as versioning policy.
 
-- Minor specification changes and text fixes will be a new patch version
-- Any syntax new feature addon o removement implies a minor new version
-- Any
+Just to clarification, related to this document, will be applied as follows
+
+- Minor specification changes and text fixes will be a patch version
+- Syntax new feature addon o removement or language logical feature is a minor new version
+- General changes with stable document releases will be mayor versions
 
 File extension
 ^^^^^^^^^^^^^^
